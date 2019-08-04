@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用hexo+nexT+github搭建个人博客]]></title>
+    <url>%2F2019%2F08%2F04%2F%E4%BD%BF%E7%94%A8hexo-nexT-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[##软件安装 1.node.js 2.git 3.hexo安装好前两个后任意地方鼠标右键打开Git Bash，输入npm install hexo-cli -g来安装hexo，但由于国内网络原因我们可能安装不上，这里使用淘宝的npm镜像$ npm install -g cnpm --registry=https://registry.npm.taobao.org，再用安装hexo$ cnpm install -g hexo-cli。]]></content>
+      <tags>
+        <tag>总结</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F08%2F04%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
