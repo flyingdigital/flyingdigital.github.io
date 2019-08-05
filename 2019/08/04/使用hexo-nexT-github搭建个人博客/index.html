@@ -113,12 +113,13 @@
 <meta property="og:image" content="https://i.loli.net/2019/08/04/9FSiWhN6jEAZcdw.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/04/92gIpG1POyHli4x.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/04/8OAyX57DFWpVlSR.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/05/dPxM4yhpOtj16Nc.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/04/J4YeOM8yEdAcmTj.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/04/zkdRMmOIQwHf8iE.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/05/4MLCwp6tgc8xnYv.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/05/GoV6JZ1K3jQhC5U.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/05/xFkvARwiDdqjTtE.png">
-<meta property="og:updated_time" content="2019-08-05T05:48:31.343Z">
+<meta property="og:updated_time" content="2019-08-05T08:26:38.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hexo+nexT+github搭建个人博客">
 <meta name="twitter:description" content="软件安装1.node.js2.git3.hexo  安装好前两个后任意地方鼠标右键打开Git Bash，输入$ npm install hexo-cli -g来安装hexo，但由于国内网络原因我们可能安装不上，这里使用淘宝的npm镜像$ npm install -g cnpm --registry=https://registry.npm.taobao.org，再用它在安装hexo $ cnpm">
@@ -405,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.8k
                 </span>
               
 
@@ -464,7 +465,7 @@
 <li><strong>设置链接颜色</strong><br>在<strong>\themes\next\source\css_common\components\post\post.styl</strong>里设置如下可以设置自己喜欢的颜色(<a href="https://blog.csdn.net/andyguan01_2/article/details/86623335" target="_blank" rel="noopener">十六进制颜色表</a>)<img src="https://i.loli.net/2019/08/04/9FSiWhN6jEAZcdw.png" alt="hexo17链接样式.png"></li>
 <li><strong>增加搜索服务</strong><br>进入<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next官方文档</a>添加一个<strong>local search</strong>的搜索服务(也可以用别的，但是别的要注册啥的麻烦，所以我就用了它)<img src="https://i.loli.net/2019/08/04/92gIpG1POyHli4x.png" alt="hexo18搜索服务.png"></li>
 <li><strong>添加评论系统</strong><br>进入<a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="noopener">第三方服务的官方文档</a>可以使用<strong>来必力</strong>的评论系统，但因为国内网络原因，加载非常慢被广大网友吐槽。我本来想用<strong>valine</strong>的评论系统，但注册后发现需要实名认证，果断放弃。所以我的博客没有评论系统。</li>
-<li><strong>增加统计服务</strong><br>在主题文件配置如下(这里用的是不蒜子统计)<img src="https://i.loli.net/2019/08/04/8OAyX57DFWpVlSR.png" alt="hexo19统计服务.png">虽然我觉得有些不对劲，但还是先用着吧！</li>
+<li><strong>增加统计服务</strong><br>在主题文件配置如下(这里用的是不蒜子统计)<img src="https://i.loli.net/2019/08/04/8OAyX57DFWpVlSR.png" alt="hexo19统计服务.png">虽然我觉得有些不对劲，但还是先用着吧！<br>用了会发现不蒜子无法正常计数(访问几次没啥效果)，发现官方给的说法是<img src="https://i.loli.net/2019/08/05/dPxM4yhpOtj16Nc.png" alt="hexo26不蒜子更新.png">解决方法：进入<strong>\themes\next\layout_third-party\analytics\busuanzi-counter.swig</strong>将<code>&lt;script async src=&quot;https://busuanzi/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code>改为<code>&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code>即可</li>
 <li><strong>设置加载效果</strong><br>在主题的配置文件搜索<strong>pace</strong>字段配置如下<img src="https://i.loli.net/2019/08/04/J4YeOM8yEdAcmTj.png" alt="hexo21设置加载效果.png">有多种选择可以尝试。</li>
 <li><strong>字数统计与阅读时长</strong><br>在博客根目录输入如下命令<code>$ npm install hexo-wordcount --save</code>然后在主题的配置文件搜索<strong>post_wordcount</strong>关键字，修改如下<img src="https://i.loli.net/2019/08/04/zkdRMmOIQwHf8iE.png" alt="hexo22字数同体积与阅读时长.png"></li>
 </ul>
