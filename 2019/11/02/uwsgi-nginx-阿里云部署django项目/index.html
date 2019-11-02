@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="django,">
 
 
 
@@ -86,13 +86,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="FlyingDigital&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Python-Spider/index.html">
+<meta name="description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
+<meta name="keywords" content="django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uwsgi+nginx+阿里云部署django项目">
+<meta property="og:url" content="http://yoursite.com/2019/11/02/uwsgi-nginx-阿里云部署django项目/index.html">
 <meta property="og:site_name" content="FlyingDigital&#39;s Blog">
+<meta property="og:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-02T01:18:44.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FlyingDigital&#39;s Blog">
+<meta name="twitter:title" content="uwsgi+nginx+阿里云部署django项目">
+<meta name="twitter:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
 
 
 
@@ -122,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Python-Spider/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/02/uwsgi-nginx-阿里云部署django项目/">
 
 
 
 
 
-  <title>标签: Python Spider | FlyingDigital's Blog</title>
+  <title>uwsgi+nginx+阿里云部署django项目 | FlyingDigital's Blog</title>
   
 
 
@@ -147,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,130 +278,275 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Python Spider<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/02/uwsgi-nginx-阿里云部署django项目/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhao Qian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/4983921_flyingdigital.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FlyingDigital's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/09/19/（python爬虫练手）爬取百度音乐-翻车实例（requests-re）/" itemprop="url">
-              
-                <span itemprop="name">（python爬虫练手）爬取百度音乐--翻车实例（requests+re）</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">uwsgi+nginx+阿里云部署django项目</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-19T15:16:09+08:00" content="2019-09-19">
-          09-19
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-02T09:17:34+08:00">
+                2019-11-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/19/（python爬虫练手）爬取梨视频（requests-re）/" itemprop="url">
-              
-                <span itemprop="name">（python爬虫练手）爬取梨视频（requests+re）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-19T10:05:44+08:00" content="2019-09-19">
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h2 id="写在前头"><a href="#写在前头" class="headerlink" title="写在前头"></a>写在前头</h2><p>我用到的配置：<br>python版本：3.6<br>服务器：阿里云Ubuntu16.04</p>
+<p>这篇文章只涉及部署内容，不涉及具体<strong>django代码</strong>，且我在部署时使用的时创建django项目时使用的是默认的<strong>SQLite数据库</strong>，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。</p>
+<p>由于不涉及django代码，所以请大家将自己要部署的django项目上传到GitHub上(Gitee)，以方便在部署时直接克隆项目。</p>
+<h2 id="部署前的python环境配置"><a href="#部署前的python环境配置" class="headerlink" title="部署前的python环境配置"></a>部署前的python环境配置</h2><p>由于Linux一般自带python2.x版本，而咱们现在用的python版本为3.x(大家可以通过<code>python -V</code>来查看python版本)，所以第一步咱们要配置python环境。另外，在部署时咱们要用到虚拟环境(virtualenv)和相关库(django等),所以在虚拟环境里，咱们也得把这配置好。下边实在服务器上的操作：</p>
+<ul>
+<li>安装python3.6<br><code>apt-get install software-properties-common</code><br><code>add-apt-repository ppa:jonathonf/python-3.6</code><br><code>apt-get update</code><br><code>apt-get install python 3.6</code></li>
+</ul>
+<p>以上步骤除了在安装时需要按<strong>y</strong>或者<strong>Enter</strong>确定安装外，最容易出现的错误是出现一个<strong>Unable</strong>啥的(即不能安装或安装失败),这个时候执行一下<code>apt-get update</code>来更新一下系统所用的源(个人理解为软件包),再执行其他命令，就完事了。</p>
+<ul>
+<li>创建软连接<br><code>cd /usr/bin</code><br><code>rm python</code><br><code>ln -s python3.6 python</code><br><code>rm python3</code><br><code>ln -s python3.6 python3</code></li>
+</ul>
+<p>这样做的目的时使<strong>python</strong>和<strong>python3</strong>指向<strong>python3.6</strong>(因为python默认指向python2.x)。个人理解就是你桌面上有英雄联盟的一个快捷方式(链接文件)，它指向英雄联盟的一个可执行文件，即点击这个桌面图标或者它实际指向的文件是同一个效果。这里咱们干的就是这个事。</p>
+<ul>
+<li>安装pip3.6<br><code>apt-get install python3-pip</code><br><code>pip3 install --upgrade pip</code></li>
+</ul>
+<p>这里可能会出现不能安装的情况，且使用<code>apt-get update</code>似乎也于事无补，但可以通过重新登录的方式解决(退了重进)。还有就是大家的pip可能报错，解决的思路跟上边一样，我把pip给他删了，再让它重新指向pip3.6(同样是在 <strong>/usr/bin</strong>目录里操作)<br><code>cd /usr/bin</code><br><code>rm pip</code><br><code>ln -s pip3.6 pip</code><br><code>rm python3</code><br><code>ln -s pip3.6 pip3</code></p>
+<ul>
+<li>安装虚拟环境<br><code>pip install virtualenv</code></li>
+</ul>
+<p>想必大家肯定熟悉这个语句。</p>
+<ul>
+<li>创建虚拟环境<br>这里我所在的目录是 <strong>/home</strong><br><code>virtualenv WeekSummaryApp_env</code><br><code>source WeekSummaryApp_env/bin/activate</code></li>
+</ul>
+<p>这里虚拟环境的名我是用<strong>自己项目的名称 + _env</strong>方便操作区分。上边第一条语句为创建虚拟环境，创建后该目录里是有东西的(不必纠结是啥)，接着我们启动虚拟环境(启动后会发现在命令行前边多了一个<strong>(WeekSummaryApp_env)</strong>)</p>
+<ul>
+<li><p>安装相关库及Git<br>注意：一下操作均在虚拟环境里完成且根据个人所需安装相关库时有所不同。<br><code>pip install django</code><br><code>pip install djangorestframework</code><br>…<br><code>apt-get install git</code>（瞬间打脸，这个也可以不用在虚拟环境里装，但咱就图个快活方便）</p>
+</li>
+<li><p>克隆项目<br><code>git clone 项目地址</code></p>
+</li>
+</ul>
+<p>这个也要在虚拟环境下完成。</p>
+<h2 id="使用uwsgi-nginx部署"><a href="#使用uwsgi-nginx部署" class="headerlink" title="使用uwsgi + nginx部署"></a>使用uwsgi + nginx部署</h2><p>这里有兴趣的童鞋可以去看<a href="https://uwsgi.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="noopener">官方文档</a>,这里主要介绍操作。</p>
+<ul>
+<li>安装uwsgi<br><code>apt-get install libpython3.6</code><br><code>pip3 install uwsgi</code></li>
+</ul>
+<p>这里值得说的时如果没有<strong>libpython3.6</strong>，下一步命令是无法成功执行的。</p>
+<ul>
+<li>配置uwsgi<br><code>cd /homne</code><br><code>mkdir WeekSummaryApp_uwsgi</code><br><code>cd WeekSummaryApp_uwsgi</code><br><code>vim WeekSummaryApp.ini</code></li>
+</ul>
+<p>WeekSummaryApp.ini里的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">chdir = /home/WeeklySummaryApp</span><br><span class="line">home = /home/WeekSummaryApp_env</span><br><span class="line">module = WeeklySummaryApp:wsgi:application</span><br><span class="line"></span><br><span class="line">master = True</span><br><span class="line">processes = 4</span><br><span class="line">harakiri = 60</span><br><span class="line">max-requests = 5000</span><br><span class="line"></span><br><span class="line">soket = 127.0.0.1:8001</span><br><span class="line">uid = 1000</span><br><span class="line">gid = 2000</span><br><span class="line"></span><br><span class="line">pidfile = /home/WeekSummaryApp.uwsgi/master.pid</span><br><span class="line">daemonize = /home/WeekSummaryApp.uwsgi/WeekSummaryApp.log</span><br><span class="line">vacuum = True</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<ul>
+<li>启动uwsgi<br><code>uwsgi --ini /home/WeekSummaryApp_uwsgi/WeekSummaryApp.ini</code></li>
+</ul>
+<p>启动完成后会发现在/home/WeekSummaryApp_uwsgi里多了两文件。<br>我们可以通过<code>ps -aux | grep uwsgi</code>来瞅瞅它到底启动没有，如果执行该命令有多行都有uwsgi则启动成功，要是只有一行则可能是代码桥错了(亲身体会)</p>
+<ul>
+<li><p>安装nginx<br><code>apt-get install nginx</code></p>
+</li>
+<li><p>nginx配置文件<br><code>cd /etc/nginx/sites-available</code><br><code>rm default</code> 没有可忽略这一步<br><code>vim WeekSummaryApp.conf</code>   编写配置文件  WeekSummaryApp是文件名</p>
+</li>
+</ul>
+<p>WeekSummaryApp.conf里的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name WeeklySummaryApp;  </span><br><span class="line">        charset utf-8;</span><br><span class="line"></span><br><span class="line">        client_max_body_size 75M;</span><br><span class="line"></span><br><span class="line">        location /static &#123;</span><br><span class="line">                alias /home/WeeklySummaryApp/static;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location /media &#123;</span><br><span class="line">                alias /home/WeeklySummaryApp/media;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                uwsgi_pass 127.0.0.1:8001;</span><br><span class="line">                include /etc/nginx/uwsgi_params;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/19/（python爬虫练手）爬取剑来小说（requests-pyquery）/" itemprop="url">
-              
-                <span itemprop="name">（python爬虫练手）爬取剑来小说（requests+pyquery）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-19T08:12:06+08:00" content="2019-09-19">
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/17/（python爬虫练手）爬取读者网站（requests-beautifulsoup）/" itemprop="url">
-              
-                <span itemprop="name">（python爬虫练手）爬取读者网站（requests+beautifulsoup</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-17T22:29:44+08:00" content="2019-09-17">
-          09-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<ul>
+<li>在sites-enavle创建软连接<br><code>ln -s /etc/nginx/sites-availavle/WeekSummaryApp.conf /etc/nginx/sites-enable/WeekSummaryApp.conf</code></li>
+</ul>
+<p>这是会发现在<strong>/etc/nginx/sites-enable/</strong>里多了一个<strong>WeekSummaryApp.conf</strong></p>
+<ul>
+<li>启动nginx服务<br><code>nginx -t</code><br><code>service nginx restart</code></li>
+</ul>
+<p>启动完成后就能在公网看到自己的django项目</p>
+<h2 id="最后的说明"><a href="#最后的说明" class="headerlink" title="最后的说明"></a>最后的说明</h2><p>由于这是基于我自己的一个项目来部署的(项目名为<strong>WeekSummaryApp</strong>)，所以各位部署自己的项目时将它改成自己项目名就好了。</p>
+<p>由于我的这个项目使用的是<strong>SQLite数据库</strong>(这个数据库是只读数据库，即readonly)，在运行时会报错。解决方法如下：</p>
+<p><code>cd /home/WeekSummaryApp</code><br><code>chmod 777 db.sqlite3</code><br><code>cd ..</code><br><code>chmod 777 *</code></p>
+<p>改变它的权限后就能正常使用了。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/django/" rel="tag"># django</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/20/win10-deepin双系统安装/" rel="next" title="win10+deepin双系统安装(windows引导)">
+                <i class="fa fa-chevron-left"></i> win10+deepin双系统安装(windows引导)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -404,6 +554,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -424,8 +578,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,6 +672,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前头"><span class="nav-number">1.</span> <span class="nav-text">写在前头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署前的python环境配置"><span class="nav-number">2.</span> <span class="nav-text">部署前的python环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用uwsgi-nginx部署"><span class="nav-number">3.</span> <span class="nav-text">使用uwsgi + nginx部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后的说明"><span class="nav-number">4.</span> <span class="nav-text">最后的说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -669,6 +848,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
