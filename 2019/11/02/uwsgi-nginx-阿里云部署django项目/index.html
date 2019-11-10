@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="FlyingDigital&#39;s Blog">
 <meta property="og:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-02T05:38:30.300Z">
+<meta property="og:updated_time" content="2019-11-09T16:22:03.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="uwsgi+nginx+阿里云部署django项目">
 <meta name="twitter:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
@@ -400,7 +400,7 @@
 <p>由于不涉及django代码，所以请大家将自己要部署的django项目上传到GitHub上(Gitee)，以方便在部署时直接克隆项目。</p>
 <h2 id="部署前的python环境配置"><a href="#部署前的python环境配置" class="headerlink" title="部署前的python环境配置"></a>部署前的python环境配置</h2><p>由于Linux一般自带python2.x版本，而咱们现在用的python版本为3.x(大家可以通过<code>python -V</code>来查看python版本)，所以第一步咱们要配置python环境。另外，在部署时咱们要用到虚拟环境(virtualenv)和相关库(django等),所以在虚拟环境里，咱们也得把这配置好。下边实在服务器上的操作：</p>
 <ul>
-<li>安装python3.6<br><code>apt-get install software-properties-common</code><br><code>add-apt-repository ppa:jonathonf/python-3.6</code><br><code>apt-get update</code><br><code>apt-get install python 3.6</code></li>
+<li>安装python3.6<br><code>apt-get install software-properties-common</code><br><code>add-apt-repository ppa:jonathonf/python-3.6</code><br><code>apt-get update</code><br><code>apt-get install python3.6</code></li>
 </ul>
 <p>以上步骤除了在安装时需要按<strong>y</strong>或者<strong>Enter</strong>确定安装外，最容易出现的错误是出现一个<strong>Unable</strong>啥的(即不能安装或安装失败),这个时候执行一下<code>apt-get update</code>来更新一下系统所用的源(个人理解为软件包),再执行其他命令，就完事了。</p>
 <ul>
@@ -410,7 +410,7 @@
 <ul>
 <li>安装pip3.6<br><code>apt-get install python3-pip</code><br><code>pip3 install --upgrade pip</code></li>
 </ul>
-<p>这里可能会出现不能安装的情况，且使用<code>apt-get update</code>似乎也于事无补，但可以通过重新登录的方式解决(退了重进)。还有就是大家的pip可能报错，解决的思路跟上边一样，我把pip给他删了，再让它重新指向pip3.6(同样是在 <strong>/usr/bin</strong>目录里操作)<br><code>cd /usr/bin</code><br><code>rm pip</code><br><code>ln -s pip3.6 pip</code><br><code>rm python3</code><br><code>ln -s pip3.6 pip3</code></p>
+<p>这里可能会出现不能安装的情况，且使用<code>apt-get update</code>似乎也于事无补，但可以通过重新登录的方式解决(退了重进)。还有就是大家的pip可能报错，解决的思路跟上边一样，我把pip给他删了，再让它重新指向pip3.6(同样是在 <strong>/usr/bin</strong>目录里操作)<br><code>cd /usr/bin</code><br><code>rm pip</code><br><code>ln -s pip3.6 pip</code><br><code>rm pip3</code><br><code>ln -s pip3.6 pip3</code>p</p>
 <ul>
 <li>安装虚拟环境<br><code>pip install virtualenv</code></li>
 </ul>
@@ -428,7 +428,7 @@
 <p>这个也要在虚拟环境下完成。</p>
 <h2 id="使用uwsgi-nginx部署"><a href="#使用uwsgi-nginx部署" class="headerlink" title="使用uwsgi + nginx部署"></a>使用uwsgi + nginx部署</h2><p>这里有兴趣的童鞋可以去看<a href="https://uwsgi.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="noopener">官方文档</a>,这里主要介绍操作。</p>
 <ul>
-<li>安装uwsgi<br><code>apt-get install libpython3.6</code><br><code>pip3 install uwsgi</code></li>
+<li>安装uwsgi<br><code>apt-get install libpython3.6-dev</code><br><code>pip3 install uwsgi</code></li>
 </ul>
 <p>这里值得说的时如果没有<strong>libpython3.6</strong>，下一步命令是无法成功执行的。</p>
 <ul>
@@ -440,20 +440,20 @@
 <ul>
 <li>启动uwsgi<br><code>uwsgi --ini /home/WeekSummaryApp_uwsgi/WeekSummaryApp.ini</code></li>
 </ul>
-<p>启动完成后会发现在/home/WeekSummaryApp_uwsgi里多了两文件。<br>我们可以通过<code>ps -aux | grep uwsgi</code>来瞅瞅它到底启动没有，如果执行该命令有多行都有uwsgi则启动成功，要是只有一行则可能是代码桥错了(亲身体会)</p>
+<p>启动完成后会发现在/home/WeekSummaryApp_uwsgi里多了两文件。<br>我们可以通过<code>ps -aux | grep uwsgi</code>来瞅瞅它到底启动没有，如果执行该命令有多行都有uwsgi则启动成功，要是只有一行则可能是代码敲错了(亲身体会)</p>
 <ul>
 <li><p>安装nginx<br><code>apt-get install nginx</code></p>
 </li>
-<li><p>nginx配置文件<br><code>cd /etc/nginx/sites-available</code><br><code>rm default</code> 没有可忽略这一步<br><code>vim WeekSummaryApp.conf</code>   编写配置文件  WeekSummaryApp是文件名</p>
+<li><p>nginx配置文件<br><code>cd /etc/nginx/sites-availabled</code><br><code>rm default</code> 没有可忽略这一步<br><code>vim WeekSummaryApp.conf</code>   编写配置文件  WeekSummaryApp是文件名</p>
 </li>
 </ul>
 <p>WeekSummaryApp.conf里的内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name WeekSummaryApp;</span><br><span class="line">        charset utf-8;</span><br><span class="line"></span><br><span class="line">        client_max_body_size 75M;</span><br><span class="line"></span><br><span class="line">        location /static &#123;</span><br><span class="line">                alias /home/WeekSummaryApp/static;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location /media &#123;</span><br><span class="line">                alias /home/WeekSummaryApp/media;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                uwsgi_pass 127.0.0.1:8001;</span><br><span class="line">                include /etc/nginx/uwsgi_params;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>在sites-enavle创建软连接<br><code>ln -s /etc/nginx/sites-availavle/WeekSummaryApp.conf /etc/nginx/sites-enable/WeekSummaryApp.conf</code></li>
+<li>在sites-enable创建软连接<br><code>ln -s /etc/nginx/sites-availavle/WeekSummaryApp.conf /etc/nginx/sites-enabled/WeekSummaryApp.conf</code></li>
 </ul>
-<p>这是会发现在<strong>/etc/nginx/sites-enable/</strong>里多了一个<strong>WeekSummaryApp.conf</strong></p>
+<p>这是会发现在<strong>/etc/nginx/sites-enabled/</strong>里多了一个<strong>WeekSummaryApp.conf</strong></p>
 <ul>
 <li>启动nginx服务<br><code>nginx -t</code><br><code>service nginx restart</code></li>
 </ul>
