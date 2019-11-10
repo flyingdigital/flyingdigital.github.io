@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="FlyingDigital&#39;s Blog">
 <meta property="og:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T16:22:03.795Z">
+<meta property="og:updated_time" content="2019-11-10T02:48:04.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="uwsgi+nginx+阿里云部署django项目">
 <meta name="twitter:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
@@ -434,6 +434,7 @@
 <ul>
 <li>配置uwsgi<br><code>cd /homne</code><br><code>mkdir WeekSummaryApp_uwsgi</code><br><code>cd WeekSummaryApp_uwsgi</code><br><code>vim WeekSummaryApp.ini</code></li>
 </ul>
+<p>如果在安装uwsgi时出现<code>ModuleNotFoundError: No module named &#39;gdbm&#39;</code>啥的可以执行<code>apt-get install python3-gdbm</code>然后再安装uwsgi即可</p>
 <p>WeekSummaryApp.ini里的内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">chdir = /home/WeekSummaryApp</span><br><span class="line">home = /home/WeekSummaryApp_env</span><br><span class="line">module = WeekSummaryApp.wsgi:application</span><br><span class="line"></span><br><span class="line">master = True</span><br><span class="line">processes = 4</span><br><span class="line">harakiri = 60</span><br><span class="line">max-requests = 5000</span><br><span class="line"></span><br><span class="line">socket = 127.0.0.1:8001</span><br><span class="line">uid = 1000</span><br><span class="line">gid = 2000</span><br><span class="line"></span><br><span class="line">pidfile = /home/WeekSummaryApp_uwsgi/master.pid</span><br><span class="line">daemonize = /home/WeekSummaryApp_uwsgi/WeekSummaryApp.log</span><br><span class="line">vacuum = True</span><br></pre></td></tr></table></figure>
 
@@ -451,7 +452,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name WeekSummaryApp;</span><br><span class="line">        charset utf-8;</span><br><span class="line"></span><br><span class="line">        client_max_body_size 75M;</span><br><span class="line"></span><br><span class="line">        location /static &#123;</span><br><span class="line">                alias /home/WeekSummaryApp/static;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location /media &#123;</span><br><span class="line">                alias /home/WeekSummaryApp/media;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                uwsgi_pass 127.0.0.1:8001;</span><br><span class="line">                include /etc/nginx/uwsgi_params;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>在sites-enable创建软连接<br><code>ln -s /etc/nginx/sites-availavle/WeekSummaryApp.conf /etc/nginx/sites-enabled/WeekSummaryApp.conf</code></li>
+<li>在sites-enabled创建软连接<br><code>ln -s /etc/nginx/sites-availavle/WeekSummaryApp.conf /etc/nginx/sites-enabled/WeekSummaryApp.conf</code></li>
 </ul>
 <p>这是会发现在<strong>/etc/nginx/sites-enabled/</strong>里多了一个<strong>WeekSummaryApp.conf</strong></p>
 <ul>
