@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="FlyingDigital&#39;s Blog">
 <meta property="og:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-10T02:48:04.917Z">
+<meta property="og:updated_time" content="2019-11-16T05:24:01.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="uwsgi+nginx+阿里云部署django项目">
 <meta name="twitter:description" content="写在前头我用到的配置：python版本：3.6服务器：阿里云Ubuntu16.04 这篇文章只涉及部署内容，不涉及具体django代码，且我在部署时使用的时创建django项目时使用的是默认的SQLite数据库，使用MySQL,MongoDB或者其他数据的大佬们请自行下载配置。由于在我部署时python3.7有些不稳定所以改用python3.6版本(python3.8如今也出来了)。 由于不涉及d">
@@ -410,7 +410,7 @@
 <ul>
 <li>安装pip3.6<br><code>apt-get install python3-pip</code><br><code>pip3 install --upgrade pip</code></li>
 </ul>
-<p>这里可能会出现不能安装的情况，且使用<code>apt-get update</code>似乎也于事无补，但可以通过重新登录的方式解决(退了重进)。还有就是大家的pip可能报错，解决的思路跟上边一样，我把pip给他删了，再让它重新指向pip3.6(同样是在 <strong>/usr/bin</strong>目录里操作)<br><code>cd /usr/bin</code><br><code>rm pip</code><br><code>ln -s pip3.6 pip</code><br><code>rm pip3</code><br><code>ln -s pip3.6 pip3</code>p</p>
+<p>这里可能会出现不能安装的情况，且使用<code>apt-get update</code>似乎也于事无补，但可以通过重新登录的方式解决(退了重进)。还有就是大家的pip可能报错，解决的思路跟上边一样，我把pip给他删了，再让它重新指向pip3.6(同样是在 <strong>/usr/bin</strong>目录里操作)<br><code>cd /usr/bin</code><br><code>rm pip</code><br><code>ln -s pip3.6 pip</code><br><code>rm pip3</code><br><code>ln -s pip3.6 pip3</code></p>
 <ul>
 <li>安装虚拟环境<br><code>pip install virtualenv</code></li>
 </ul>
@@ -445,7 +445,7 @@
 <ul>
 <li><p>安装nginx<br><code>apt-get install nginx</code></p>
 </li>
-<li><p>nginx配置文件<br><code>cd /etc/nginx/sites-availabled</code><br><code>rm default</code> 没有可忽略这一步<br><code>vim WeekSummaryApp.conf</code>   编写配置文件  WeekSummaryApp是文件名</p>
+<li><p>nginx配置文件<br><code>cd /etc/nginx/sites-available</code><br><code>rm default</code> 没有可忽略这一步<br><code>vim WeekSummaryApp.conf</code>   编写配置文件  WeekSummaryApp是文件名</p>
 </li>
 </ul>
 <p>WeekSummaryApp.conf里的内容</p>
