@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="FlyingDigital&#39;s Blog">
 <meta property="og:description" content="写在前头文章主要介绍mongodb下载后的操作，具体为安装，添加用户，增删改查。最后将与python爬虫一起搞事情。mongodb可以去他的官网下载(我正在使用的是Windows下的4.2版本，如果您使用的是Windows系统，建议下载mis包而不是zip) 安装首先跟着安装程序一顿next，安装好数据库后的配置可以参考官方文档,这里简要说说别的方法。  打开cmd，进入mongodb安装盘输入命">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-20T09:37:15.791Z">
+<meta property="og:updated_time" content="2019-12-21T02:11:24.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb的基本操作">
 <meta name="twitter:description" content="写在前头文章主要介绍mongodb下载后的操作，具体为安装，添加用户，增删改查。最后将与python爬虫一起搞事情。mongodb可以去他的官网下载(我正在使用的是Windows下的4.2版本，如果您使用的是Windows系统，建议下载mis包而不是zip) 安装首先跟着安装程序一顿next，安装好数据库后的配置可以参考官方文档,这里简要说说别的方法。  打开cmd，进入mongodb安装盘输入命">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  1.8k
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -480,7 +480,20 @@
 <li><code>db.集合名字.find({name:{$regex:&quot;^李&quot;,$options:&#39;i&#39;}})</code></li>
 </ul>
 </li>
+<li>结果显示<ul>
+<li>skip()  跳过几条数据显示<br>  <code>db.集合名字.find().skip(3)</code><br>  将跳过前三条数据显示(如果有三条数据的话)</li>
+<li>limit()  只看匹配的几条数据<br>  <code>db.集合名字.find().limit(3)</code><br>  将只显示前三条数据<br>  需要说明的是skip()的优先级要比limit()高</li>
+<li>因为有些数据的键比较多，但是我又只想看其中的某几个键可以用如下语句<br>  <code>db.集合名字.find({},{name:1,age:1})</code><br>  这条语句表示显示这个集合的数据里带name和age的键值对<br>  第一个参数代表这个集合所有数据(猜的)</li>
+<li>count() 显示匹配的数据个数<br>  <code>db.集合名字.find().count()</code></li>
+<li>distinct() 去重操作<br>  <code>db.集合名字.distinct(&#39;name&#39;,{})</code><br>  第一个参数为需要去重的字段，第二个为需要去重的数据</li>
 </ul>
+</li>
+</ul>
+<p>还有一些查找的方法，这里暂不展示了，下面进入与python交互的阶段。</p>
+<h2 id="mongodb与python交互"><a href="#mongodb与python交互" class="headerlink" title="mongodb与python交互"></a>mongodb与python交互</h2><p>mongodb与python交互主要用的是<strong>pymongo</strong>的三方库，使用也分几步。分别为建库，建表，然后是对数据的操作。<br>大致用法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import pymongo</span><br><span class="line"></span><br><span class="line">mongodb = pymongo.MongoClient()</span><br><span class="line">try:</span><br><span class="line">    collection = mongodb.a.stu</span><br><span class="line"></span><br><span class="line">    one = &#123;&quot;name&quot;:&quot;xxx&quot;,&quot;age&quot;:33&#125;</span><br><span class="line">    dir = [</span><br><span class="line">        &#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:2&#125;,</span><br><span class="line">        &#123;&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:7&#125;,</span><br><span class="line">        &#123;&quot;name&quot;:&quot;王五&quot;,&quot;age&quot;:6&#125;,</span><br><span class="line">        &#123;&quot;name&quot;:&quot;小刘&quot;,&quot;age&quot;:5&#125;,</span><br><span class="line">        &#123;&quot;name&quot;:&quot;小赵&quot;,&quot;age&quot;:4&#125;,</span><br><span class="line">        &#123;&quot;name&quot;:&quot;小孙&quot;,&quot;age&quot;:3&#125;</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    # collection.insert_one(one)</span><br><span class="line">    # collection.insert_many(dir)</span><br><span class="line"></span><br><span class="line">    # collection.delete_one(&#123;&quot;name&quot;:&quot;xxx&quot;&#125;)</span><br><span class="line">    # collection.delete_many(&#123;&quot;name&quot;:&quot;xxx&quot;&#125;)</span><br><span class="line"></span><br><span class="line">    collection.update_one(&#123;&quot;name&quot;:&quot;张三&quot;&#125;,&#123;&quot;$set&quot;:&#123;&quot;name&quot;:&quot;xiaozhang&quot;&#125;&#125;)</span><br><span class="line">    collection.update_many(&#123;&quot;name&quot;:&quot;张三&quot;&#125;,&#123;&quot;$set&quot;:&#123;&quot;name&quot;:&quot;xiaozhang&quot;&#125;&#125;)</span><br><span class="line">except Exception as e:</span><br><span class="line">    print(e)</span><br><span class="line">finally:</span><br><span class="line">    mongodb.close()</span><br></pre></td></tr></table></figure>
+
+<p>可以发现跟mongodb里的操作大同小异。<br>接下来可以用python+mongodb搞事情了！！！</p>
 
       
     </div>
@@ -701,7 +714,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前头"><span class="nav-number">1.</span> <span class="nav-text">写在前头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动mongodb服务"><span class="nav-number">3.</span> <span class="nav-text">启动mongodb服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加用户"><span class="nav-number">4.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增删改查"><span class="nav-number">5.</span> <span class="nav-text">增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对数据库的操作"><span class="nav-number">5.1.</span> <span class="nav-text">对数据库的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对集合的集合-collection-操作"><span class="nav-number">5.2.</span> <span class="nav-text">对集合的集合(collection)操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对集合数据的操作"><span class="nav-number">5.3.</span> <span class="nav-text">对集合数据的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入-增加"><span class="nav-number">5.3.1.</span> <span class="nav-text">插入(增加)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">5.3.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改"><span class="nav-number">5.3.3.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询"><span class="nav-number">5.3.4.</span> <span class="nav-text">查询</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前头"><span class="nav-number">1.</span> <span class="nav-text">写在前头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动mongodb服务"><span class="nav-number">3.</span> <span class="nav-text">启动mongodb服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加用户"><span class="nav-number">4.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增删改查"><span class="nav-number">5.</span> <span class="nav-text">增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对数据库的操作"><span class="nav-number">5.1.</span> <span class="nav-text">对数据库的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对集合的集合-collection-操作"><span class="nav-number">5.2.</span> <span class="nav-text">对集合的集合(collection)操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对集合数据的操作"><span class="nav-number">5.3.</span> <span class="nav-text">对集合数据的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入-增加"><span class="nav-number">5.3.1.</span> <span class="nav-text">插入(增加)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">5.3.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改"><span class="nav-number">5.3.3.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询"><span class="nav-number">5.3.4.</span> <span class="nav-text">查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mongodb与python交互"><span class="nav-number">6.</span> <span class="nav-text">mongodb与python交互</span></a></li></ol></div>
             
 
           </div>
