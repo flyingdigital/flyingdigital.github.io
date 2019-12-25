@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="FlyingDigital&#39;s Blog">
 <meta property="og:description" content="写在前头文章主要介绍mongodb下载后的操作，具体为安装，添加用户，增删改查。最后将与python爬虫一起搞事情。mongodb可以去他的官网下载(我正在使用的是Windows下的4.2版本，如果您使用的是Windows系统，建议下载mis包而不是zip) 安装首先跟着安装程序一顿next，安装好数据库后的配置可以参考官方文档,这里简要说说别的方法。  打开cmd，进入mongodb安装盘输入命">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-21T02:11:24.841Z">
+<meta property="og:updated_time" content="2019-12-21T02:45:34.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb的基本操作">
 <meta name="twitter:description" content="写在前头文章主要介绍mongodb下载后的操作，具体为安装，添加用户，增删改查。最后将与python爬虫一起搞事情。mongodb可以去他的官网下载(我正在使用的是Windows下的4.2版本，如果您使用的是Windows系统，建议下载mis包而不是zip) 安装首先跟着安装程序一顿next，安装好数据库后的配置可以参考官方文档,这里简要说说别的方法。  打开cmd，进入mongodb安装盘输入命">
@@ -438,6 +438,7 @@
 <p>查看所有用户<code>show users</code><br>用户登录<code>db.auth(&quot;用户名&quot;,&quot;密码&quot;)</code><br>删除用户<code>db.dropUser(&quot;用户名&quot;)</code></p>
 <p>这些操作要在admin这个数据库里完成。还需要注意的是root用户自己可以把自己给干死，干死以后很麻烦，由于普通用户没有删除和创建用户的权限，干不了啥事，解决起来很麻烦。</p>
 <h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><h3 id="对数据库的操作"><a href="#对数据库的操作" class="headerlink" title="对数据库的操作"></a>对数据库的操作</h3><p>在mongodb里新建数据库比较简单，直接<code>use 数据库名</code>，如果没有在这个数据库里加入了数据，则可以自动创建数据库。</p>
+<p><code>db.dropDatabase()</code>表示删除当前数据库</p>
 <h3 id="对集合的集合-collection-操作"><a href="#对集合的集合-collection-操作" class="headerlink" title="对集合的集合(collection)操作"></a>对集合的集合(collection)操作</h3><ul>
 <li>增加一个新的集合<code>db.createCollection(&quot;集合名字&quot;)</code></li>
 <li>删除一个集合<code>db.集合名字.drop()</code></li>
@@ -533,6 +534,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/22/mysql操作小记/" rel="prev" title="mysql操作小记">
+                mysql操作小记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -637,7 +642,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -659,7 +664,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

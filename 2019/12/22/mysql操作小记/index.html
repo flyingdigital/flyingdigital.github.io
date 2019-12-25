@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="随笔,">
+  <meta name="keywords" content="mysql,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="写在前头以下内容为人工智能大数据课程对谷歌三篇关于人工智能报告的一些思考，即该课程论文。 正文部分Google的三篇报告的主题是Bigtabl数据存储系统，Google GFS 文件系统和MapReduce编程模型。完全看懂我觉得对现在的我来说有些困难，但不难看出其三位一体，在我看来这三篇报道就是实现了数据的存储，管理与对数据进行操作。 这么一来就很好理解了，假设现在我有非常多的数据，如果我想对他">
-<meta name="keywords" content="随笔">
+<meta name="description" content="数据库的操作注:以下命令使用的dbname为指代。  创建数据库:create database dbname charset=utf8; 查看所有数据库:show databases; 删除数据库:drop database dbname;] 切换数据库:use dbname; 查看当前数据库:select database();  表操作 创建表(这里以dog为例): 1234create t">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="由谷歌三篇报告的思考">
-<meta property="og:url" content="http://yoursite.com/2019/11/30/由谷歌三篇报告的思考/index.html">
+<meta property="og:title" content="mysql操作小记">
+<meta property="og:url" content="http://yoursite.com/2019/12/22/mysql操作小记/index.html">
 <meta property="og:site_name" content="FlyingDigital&#39;s Blog">
-<meta property="og:description" content="写在前头以下内容为人工智能大数据课程对谷歌三篇关于人工智能报告的一些思考，即该课程论文。 正文部分Google的三篇报告的主题是Bigtabl数据存储系统，Google GFS 文件系统和MapReduce编程模型。完全看懂我觉得对现在的我来说有些困难，但不难看出其三位一体，在我看来这三篇报道就是实现了数据的存储，管理与对数据进行操作。 这么一来就很好理解了，假设现在我有非常多的数据，如果我想对他">
+<meta property="og:description" content="数据库的操作注:以下命令使用的dbname为指代。  创建数据库:create database dbname charset=utf8; 查看所有数据库:show databases; 删除数据库:drop database dbname;] 切换数据库:use dbname; 查看当前数据库:select database();  表操作 创建表(这里以dog为例): 1234create t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T04:29:42.284Z">
+<meta property="og:updated_time" content="2019-12-25T04:52:27.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="由谷歌三篇报告的思考">
-<meta name="twitter:description" content="写在前头以下内容为人工智能大数据课程对谷歌三篇关于人工智能报告的一些思考，即该课程论文。 正文部分Google的三篇报告的主题是Bigtabl数据存储系统，Google GFS 文件系统和MapReduce编程模型。完全看懂我觉得对现在的我来说有些困难，但不难看出其三位一体，在我看来这三篇报道就是实现了数据的存储，管理与对数据进行操作。 这么一来就很好理解了，假设现在我有非常多的数据，如果我想对他">
+<meta name="twitter:title" content="mysql操作小记">
+<meta name="twitter:description" content="数据库的操作注:以下命令使用的dbname为指代。  创建数据库:create database dbname charset=utf8; 查看所有数据库:show databases; 删除数据库:drop database dbname;] 切换数据库:use dbname; 查看当前数据库:select database();  表操作 创建表(这里以dog为例): 1234create t">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/30/由谷歌三篇报告的思考/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/22/mysql操作小记/">
 
 
 
 
 
-  <title>由谷歌三篇报告的思考 | FlyingDigital's Blog</title>
+  <title>mysql操作小记 | FlyingDigital's Blog</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/由谷歌三篇报告的思考/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/22/mysql操作小记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhao Qian">
@@ -309,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">由谷歌三篇报告的思考</h1>
+          <h1 class="post-title" itemprop="name headline">mysql操作小记</h1>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T10:16:45+08:00">
-                2019-11-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-22T12:54:34+08:00">
+                2019-12-22
               </time>
             
 
@@ -331,6 +331,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -358,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  2.2k
                 </span>
               
 
@@ -374,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  9
                 </span>
               
             </div>
@@ -395,11 +417,182 @@
       
 
       
-        <h2 id="写在前头"><a href="#写在前头" class="headerlink" title="写在前头"></a>写在前头</h2><p>以下内容为人工智能大数据课程对谷歌三篇关于人工智能报告的一些思考，即该课程论文。</p>
-<h2 id="正文部分"><a href="#正文部分" class="headerlink" title="正文部分"></a>正文部分</h2><p>Google的三篇报告的主题是Bigtabl数据存储系统，Google GFS 文件系统和MapReduce<br>编程模型。完全看懂我觉得对现在的我来说有些困难，但不难看出其三位一体，在我看来这三篇报道就是实现了数据的存储，管理与对数据进行操作。</p>
-<p>这么一来就很好理解了，假设现在我有非常多的数据，如果我想对他进行分析，那么我首先得想法子把这些要分析的数据给存储下来（如果只是正对一次数据分析的话其实我觉得大可不必存下这些海量级的数据，我们要存的只是我们需要的一个结果罢了。但是事实上我们更希望可以将这些数据给存储下来，why？ 当往后你需要用到这些数据的时候你不需要在重新花费大量的时间去获取，比如我现在收集了2018年全校学生某一学科的一个成绩分布，并且通过分析得到了全校学生的成绩分布区间。现在我想在2019年再次获取全校学生同一门课程的成绩，并与统计连续两年这个课程的成绩。如果没有将2018年数据存下来，重新获取数据可能又要获取大量时间，并且如果我要分析别的东西如性别分布等，那么所要的时间将几何是增加，然后用一个适合的文件系统对其进行管理，说到文件管理其实如果对Linux有些了解的人就会知道Linux的每一个发行版基本上都会有一个包管理器，简单说就是将文件打包分类，比如我一个QQ的软件，单独为他创建一个文件夹，然后在里边在存储QQ所需要的文件，而不是所有文件都不加分类的随意乱放。而Google的文件系统我认为大概干的就是这个事情，只不过针对这些海量的数据对文件系统的性能等做了优化，并且更适合大量数据处理。对编程模型其实我认为他就是对数据的一个处理，从而得到我想要的东西。比如玩过爬虫的一定会知道万能的正则表达式，没有它，即使我们从网页上爬到了数据也于事无补，数据不会说话，并且有大量我们不需要的数据，比如网页的html标签等，只有得到了我们需要的东西，才能进一步做总计分析。</p>
-<p>人工智能，我觉得空谈非常的虚，除了外部的物理设备外，内部的算法非常重要。比如消歧这个功能，对一个中国人来说，别人问你吃饭了吗？ 这其实根据不同场合有不同的意思，可能只是单纯的一句问候，也可能是发问者想邀请你一起去吃饭，那么这对机器来说可能就非常复杂了，他可能无法准确判断你到底想表达什么，从而做出错误的行为。那么想要它做出相对正确的判断，就得要给他够多的条件信息，做出一个最大概率的判断，而这没有数以亿计的数据来支撑根本无法实现。除此之外，虽然人工智能的理论已经在上个世纪就已经提出，但直到现在也只是在初级阶段还与它牵扯的各领域只是有关，比如神经网络，没有相关领域的研究突破，跟别就不用想应用了。</p>
-<p>总的来说，我认为作为一个学生，了解相关信息后陷入迷茫概率很大，因为涉及东西太多，感觉无从学起。但是从各领域大佬们也大致能了解到一些方向，统计学。这是大数据无法绕开的东西，也是数据分析的基础。</p>
+        <h2 id="数据库的操作"><a href="#数据库的操作" class="headerlink" title="数据库的操作"></a>数据库的操作</h2><p>注:以下命令使用的<strong>dbname</strong>为指代。</p>
+<ul>
+<li>创建数据库:<code>create database dbname charset=utf8;</code></li>
+<li>查看所有数据库:<code>show databases;</code></li>
+<li>删除数据库:<code>drop database dbname;</code>]</li>
+<li>切换数据库:<code>use dbname;</code></li>
+<li>查看当前数据库:<code>select database();</code></li>
+</ul>
+<h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><ul>
+<li><p>创建表(这里以dog为例):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table dog(</span><br><span class="line">id int primary key auto_increment,</span><br><span class="line">name varchar(16) not null</span><br><span class="line">	);</span><br></pre></td></tr></table></figure>
+
+<p>  不难发现dog表里要先声明字段名和字段类型(varchar(16)表示最多接受16个字符长度)，再然后是这个字段的其他属性(eg:primary key等)。需要注意的是，每一个字段的末尾要用<strong>‘,’</strong>隔开且最后一个字段末尾不能带<strong>‘,’</strong>否则报错。</p>
+</li>
+<li><p>修改表：基本结构为<code>alter table tablename;</code>(tablename为要操作的表名)下边以dog表为例</p>
+<ul>
+<li>增加字段<code>alter table dog add birthday datetime;</code>，这里增加了一个datetime类型的字段。</li>
+<li>查看表的结构(注意不是表的内容):<code>desc dog;</code></li>
+<li>修改字段<code>alter table dog change birthday Birthday int not null</code>，这里我将birthday修改为Birthday，类型为int，其他属性为not null。</li>
+<li>删除字段<code>alter table dog drop birthday;</code>，这里删除了B<br>irthday字段。</li>
+<li>修改表名<code>rename dog to cat;</code>将表名为dog的表改为表名为cat的表。</li>
+</ul>
+</li>
+<li><p>删除表<br>  <code>drop table tablename;</code></p>
+</li>
+<li><p>查看建表时的语句<br>  <code>show create table tablename;</code>这里可以看到表类型，表字段等信息。可以理解为<code>desc tablename;</code>升级版。</p>
+</li>
+</ul>
+<h2 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h2><p>这里假设我有一个名为dog的表，他有id和name字段其中id为primary key auto_increment</p>
+<ul>
+<li><p>增加</p>
+<ul>
+<li><p>单条全列插入:<code>insert into dog values(1,&quot;哈士奇&quot;);</code>(必须按照顺序写)</p>
+</li>
+<li><p>缺省插入:如果一开始我就把某些字段设置为auto_increment或者有default值等,我插入数据时就可以不用再去管这些字段比如id。<code>insert into dog(name) values(&quot;大金毛&quot;);</code></p>
+</li>
+<li><p>批量插入(即插入多条数据):<code>insert into dog values(3,&#39;泰迪&#39;),(4,&quot;小腊肠&quot;);</code></p>
+</li>
+<li><p>批量缺省插入: <code>insert into dog(name) values(&quot;德国牧羊犬&quot;),(&quot;狮子狗&quot;);</code></p>
+<p>如果忘了id到几了 这么写也能完成自增<br><code>insert into dog values(0,&quot;秋田犬&quot;);</code></p>
+</li>
+</ul>
+</li>
+<li><p>查看<code>select * from dog;</code></p>
+</li>
+<li><p>修改<br>  <code>update dog set name=&quot;秋田犬&quot; where id=1;</code><br>  set后跟要修改的字段，where为筛选条件。需要说明的是这里修改的是所有筛选到的数据，而非第一条。</p>
+</li>
+<li><p>删除<br>  在数据库里有两种删除，一种为物理删除即把真的把数据库里的数据给删了；另一个为逻辑删除，即给每一个数据一个布尔字段，删除即改变这个布尔值，数据仍在数据库里，只是取出来的时候使用了if判断让用户看不到。</p>
+<ul>
+<li>物理删除 <code>delete from dog where id=1;</code><br>  物理删除原来id为2的数据的id不会变为1</li>
+<li>逻辑删除 <code>update dog set isdelete=1 where id=1;</code><br>  逻辑删除即修改一个布尔值(这里的字段为自己定义的。)</li>
+</ul>
+</li>
+</ul>
+<h2 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h2><p><code>select id,name from dog;</code> 假设dog里有多个字段，这条语句只查询id和dog这两字段</p>
+<ul>
+<li><p>条件运算</p>
+<ul>
+<li><blockquote>
+</blockquote>
+</li>
+<li>&lt;</li>
+<li><blockquote>
+<p>=</p>
+</blockquote>
+</li>
+<li>&lt;=</li>
+<li>!=</li>
+<li>=<br><code>select id from dog where id&gt;2;</code></li>
+</ul>
+</li>
+<li><p>逻辑运算 </p>
+<ul>
+<li>and </li>
+<li>or</li>
+<li>not(一般与in等连用)<br><code>select id from dog where id&gt;2 and id&lt;5;</code></li>
+</ul>
+</li>
+<li><p>模糊查询(类似正则)</p>
+<ul>
+<li><p>%            (匹配多个)</p>
+</li>
+<li><p>_            (匹配单个)</p>
+<p>查询名字以金字开头:<code>select * from dog where name like &#39;金%&#39;;</code><br>查询名字以金字结尾:<code>select * from dog where name like &#39;%金&#39;;</code><br>查询名字带有金字:<code>select * from dog where name like &#39;%金$;</code></p>
+</li>
+</ul>
+</li>
+<li><p>范围查询</p>
+<ul>
+<li>in</li>
+<li>not in </li>
+<li>between and<br>查询id为1，3，5，7的人:<code>select * from dog where id in(1,3,5,7);</code><br>查询id为1到5之间的人:<code>select * from dog where id between 1 and 5;</code><br>查询id为1到5之间且name为哈士奇的人:<code>select * from dog where id between 1 and 5 and name=&#39;哈士奇&#39;;</code></li>
+</ul>
+</li>
+<li><p>判断空 </p>
+<ul>
+<li>is </li>
+<li>is not<br><code>select * from dog where name is not null;</code></li>
+</ul>
+</li>
+<li><p>优先级 </p>
+<ul>
+<li>()</li>
+<li>not</li>
+<li>条件运算</li>
+<li>逻辑运算(and &gt; or)</li>
+</ul>
+</li>
+<li><p>聚合运算 </p>
+<ul>
+<li>count()        个数<br>  <code>select count(*) from dog;</code><br>  <code>select count(id) from dog where name=&#39;哈士奇&#39;;</code></li>
+<li>max()            最大值<br>  <code>select max(id) from dog</code><br>  <code>select max(id) from dog where name=&#39;哈士奇&#39;;</code></li>
+<li>min()            最小值<br>  <code>select min(id) from dog</code><br>  <code>select min(id) from dog where name=&#39;哈士奇&#39;;</code></li>
+<li>sum()            求和<br>  <code>select sum(id) from dog</code><br>  <code>select sum(id) from dog where name=&#39;哈士奇&#39;;</code></li>
+<li>avg()            平均值<br>  <code>select avg(id) from dog</code><br>  <code>select avg(id) from dog where name=&#39;哈士奇&#39;;</code></li>
+</ul>
+</li>
+<li><p>分组查询</p>
+<ul>
+<li>group by</li>
+<li>having<br><code>select name as &#39;名字&#39;,count(*) from dog group by name;</code><br>  通过名字进行分组，名字相同的为一组，逗号之前的内容为别名，没有as 就是原始名字<br><code>select name,count(*) from dog group by name having name=&quot;哈士奇&quot;;</code><br>  先分组，然后筛选出哈士奇这一组出来 </li>
+</ul>
+</li>
+<li><p>排序</p>
+<ul>
+<li>order by<ul>
+<li>asc    升序</li>
+<li>dasc    降序<br><code>select id from dog where name=&quot;哈士奇&quot; order by asc;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>分页</p>
+<ul>
+<li>limit start,count     从第几个开始，显示多少数据<br><code>select * from dog where name=&quot;哈士奇&quot; limit 0,2</code></li>
+</ul>
+</li>
+<li><p>去重</p>
+<ul>
+<li>distinct<br><code>select dintinct name from dog;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><p>基本形式 <code>foreign key(一张表的某个字段) references 另一张表(某字段);</code></p>
+<p>下边的命令大致为我创建了三张表,分别为subjects,students和scores，这三张表插入了数据，最后关联外键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table subjects(</span><br><span class="line">    -&gt; id int primary key auto_increment,</span><br><span class="line">    -&gt; subject varchar(16) not null</span><br><span class="line">    -&gt; );</span><br><span class="line"></span><br><span class="line">mysql&gt; insert into subjects(subject) values(&quot;语文&quot;),(&quot;数学&quot;),(&quot;英语&quot;),(&quot;物理&quot;),(&quot;化学&quot;),(&quot;生物&quot;);</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from subjects;</span><br><span class="line">+----+---------+</span><br><span class="line">| id | subject |</span><br><span class="line">+----+---------+</span><br><span class="line">|  1 | 语文    |</span><br><span class="line">|  2 | 数学    |</span><br><span class="line">|  3 | 英语    |</span><br><span class="line">|  4 | 物理    |</span><br><span class="line">|  5 | 化学    |</span><br><span class="line">|  6 | 生物    |</span><br><span class="line">+----+---------+</span><br><span class="line"></span><br><span class="line">mysql&gt; create table students(</span><br><span class="line">    -&gt; id int primary key auto_increment,</span><br><span class="line">    -&gt; name varchar(16) not null,</span><br><span class="line">    -&gt; isdelete bit default 0,</span><br><span class="line">    -&gt; gender bit</span><br><span class="line">    -&gt; );</span><br><span class="line"></span><br><span class="line">mysql&gt; insert into students(name,gender) values(&quot;张三&quot;,0),(&quot;李四&quot;,0),(&quot;王五&quot;,0),(&quot;小刘&quot;,0),(&quot;小孙&quot;,1);</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from students;</span><br><span class="line">+----+------+----------+--------+</span><br><span class="line">| id | name | isdelete | gender |</span><br><span class="line">+----+------+----------+--------+</span><br><span class="line">|  1 | 张三 |          |        |</span><br><span class="line">|  2 | 李四 |          |        |</span><br><span class="line">|  3 | 王五 |          |        |</span><br><span class="line">|  4 | 小刘 |          |        |</span><br><span class="line">|  5 | 小孙 |          |       |</span><br><span class="line">+----+------+----------+--------+</span><br><span class="line"></span><br><span class="line">mmysql&gt; create table scores(</span><br><span class="line">    -&gt; id int primary key auto_increment,</span><br><span class="line">    -&gt; score decimal(5,2),</span><br><span class="line">    -&gt; stuid int,</span><br><span class="line">    -&gt; subid int,</span><br><span class="line">    -&gt; foreign key(stuid) references students(id),</span><br><span class="line">    -&gt; foreign key(subid) references subjects(id)</span><br><span class="line">    -&gt; );</span><br><span class="line"></span><br><span class="line">mysql&gt; insert into scores(stuid,subid,score) values(1,1,80),(2,2,99);</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from scores;</span><br><span class="line">+----+-------+-------+-------+</span><br><span class="line">| id | score | stuid | subid |</span><br><span class="line">+----+-------+-------+-------+</span><br><span class="line">|  1 | 80.00 |     1 |     1 |</span><br><span class="line">|  2 | 99.00 |     2 |     2 |</span><br><span class="line">+----+-------+-------+-------+</span><br></pre></td></tr></table></figure>
+
+<h2 id="链接显示"><a href="#链接显示" class="headerlink" title="链接显示"></a>链接显示</h2><p>接着要说的是链接显示(这里只用inner join)：个人理解为将有关系的几张表连接在一起，他们应该有一个链接中心(scores),还应该关联其他表(students,subjects)。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select students.name,subjects.subject,scores.score</span><br><span class="line">    -&gt; from scores</span><br><span class="line">    -&gt; inner join students on scores.stuid=students.id</span><br><span class="line">    -&gt; inner join subjects on scores.subid=subjects.id;</span><br><span class="line">+------+---------+-------+</span><br><span class="line">| name | subject | score |</span><br><span class="line">+------+---------+-------+</span><br><span class="line">| 张三 | 语文    | 80.00 |</span><br><span class="line">| 李四 | 数学    | 99.00 |</span><br><span class="line">+------+---------+-------+</span><br></pre></td></tr></table></figure>
+
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>简单理解为使用查询语句，为查到的数据建一张新表。(封装sqlite语句)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create view test as</span><br><span class="line">    -&gt; select students.name,scores.score from scores</span><br><span class="line">    -&gt; inner join students on scores.stuid=students.id;</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from test;</span><br><span class="line">+------+-------+</span><br><span class="line">| name | score |</span><br><span class="line">+------+-------+</span><br><span class="line">| 张三 | 80.00 |</span><br><span class="line">| 李四 | 99.00 |</span><br><span class="line">+------+-------+</span><br></pre></td></tr></table></figure>
+
+<p>嘤嘤嘤。</p>
+<h2 id="自关联"><a href="#自关联" class="headerlink" title="自关联"></a>自关联</h2><p>也是一个外键关系，只不过是自己关联自己，这里得具体情况具体分析，但是有一点取别名很重要，即老练运用 as </p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>只有Engine=innodb或Engin=ddb的表才能使用事务功能，可以通过<code>show create table tablename;</code>来查看Engine类型(默认为innodb),如果不是可以更改<code>alter table tablename engine=innodb;</code>。</p>
+<ul>
+<li>开启事务     <code>begin;</code></li>
+<li>提交事务   <code>commit;</code></li>
+<li>事务回滚    <code>rollback;</code><br>开启事务后insert数据实际插入的是缓存区，只有commit后才能在数据库看到他。回滚即把上一次缓存区的数据干掉。</li>
+</ul>
+<h2 id="索引查询"><a href="#索引查询" class="headerlink" title="索引查询"></a>索引查询</h2><ul>
+<li>创建索引:<code>create index indexname on tablename(key(length));</code><br>  indexname为自己定义的索引名</li>
+<li>查看所有索引:<code>show index from tablename;</code></li>
+<li>删除索引:<code>drop index indexname on tablename;</code><br>因为索引查询效率很高所以经常使用，但索引会影响其他性能比如增删改查，会让他们非常的慢。<br>故咱们的通常做法为<strong>建完就删</strong>。</li>
+</ul>
+<p>怎么看查询时间？</p>
+<ul>
+<li>设置时间: <code>set profiling=1;</code></li>
+<li>查询语句</li>
+<li><code>show profiles;</code></li>
+</ul>
+<h2 id="python与mysql交互"><a href="#python与mysql交互" class="headerlink" title="python与mysql交互"></a>python与mysql交互</h2><p>使用的第三方库:pymysql<br>连接数据库:Connect()<br>Cursor()对象<br>    - execute()<br>    - fetchone()<br>    - fetchall()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line">try:</span><br><span class="line">    # 连接数据库</span><br><span class="line">    con = pymysql.Connect(</span><br><span class="line">        host=&apos;localhost&apos;,</span><br><span class="line">        port=3306,</span><br><span class="line">        db=&apos;animal&apos;,</span><br><span class="line">        user=&apos;root&apos;,</span><br><span class="line">        passwd=&apos;8974&apos;,</span><br><span class="line">        charset=&apos;utf8&apos;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    # 创建游标对象 cursor()</span><br><span class="line">    cur = con.cursor()</span><br><span class="line"></span><br><span class="line">    # insert_sub = &quot;insert into subjects(subject) values(&apos;爬虫&apos;)&quot;</span><br><span class="line">    # cur.execute(insert_sub)</span><br><span class="line"></span><br><span class="line">    # update_sub = &quot;update subjects set subject=&apos;嘤嘤嘤&apos; where id=8&quot;</span><br><span class="line">    # cur.execute(update_sub)</span><br><span class="line"></span><br><span class="line">    # delete_sub = &quot;delete from subjects where id=8&quot;</span><br><span class="line">    # cur.execute(delete_sub)</span><br><span class="line"></span><br><span class="line">    select_sub = &apos;select * from subjects&apos;</span><br><span class="line">    cur.execute(select_sub)</span><br><span class="line"></span><br><span class="line">    # 执行过查询语句后在执行如下语句即可查到数据</span><br><span class="line">    print(cur.fetchone())</span><br><span class="line">    print(cur.fetchall())</span><br><span class="line"></span><br><span class="line">    con.commit()</span><br><span class="line">    cur.close()</span><br><span class="line">    con.close()</span><br><span class="line">except Exception as e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库的备份与恢复"><a href="#数据库的备份与恢复" class="headerlink" title="数据库的备份与恢复"></a>数据库的备份与恢复</h2><p>备份:<code>mysqldump -u root -p db_name table_name &gt; 备份文件绝对路径;</code><br>恢复:<code>mysql -u root -p db_name &lt; 备份文件绝对路径</code></p>
 
       
     </div>
@@ -417,7 +610,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -430,8 +623,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/02/uwsgi-nginx-阿里云部署django项目/" rel="next" title="uwsgi+nginx+阿里云部署django项目">
-                <i class="fa fa-chevron-left"></i> uwsgi+nginx+阿里云部署django项目
+              <a href="/2019/12/20/mongodb的基本操作/" rel="next" title="mongodb的基本操作">
+                <i class="fa fa-chevron-left"></i> mongodb的基本操作
               </a>
             
           </div>
@@ -439,10 +632,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/05/使用python将markdown转为pdf/" rel="prev" title="使用python将markdown转为pdf">
-                使用python将markdown转为pdf <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -624,7 +813,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前头"><span class="nav-number">1.</span> <span class="nav-text">写在前头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文部分"><span class="nav-number">2.</span> <span class="nav-text">正文部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的操作"><span class="nav-number">1.</span> <span class="nav-text">数据库的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">2.</span> <span class="nav-text">表操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据操作"><span class="nav-number">3.</span> <span class="nav-text">数据操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询操作"><span class="nav-number">4.</span> <span class="nav-text">查询操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外键"><span class="nav-number">5.</span> <span class="nav-text">外键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接显示"><span class="nav-number">6.</span> <span class="nav-text">链接显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-number">7.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自关联"><span class="nav-number">8.</span> <span class="nav-text">自关联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">9.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引查询"><span class="nav-number">10.</span> <span class="nav-text">索引查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python与mysql交互"><span class="nav-number">11.</span> <span class="nav-text">python与mysql交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的备份与恢复"><span class="nav-number">12.</span> <span class="nav-text">数据库的备份与恢复</span></a></li></ol></div>
             
 
           </div>
